@@ -265,7 +265,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/volume_rendering.png);
+    background-image: url(img/volume_rendering.png);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -653,7 +653,7 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url(../img/colliding_waveDM_halo.png);
+    background-image: url(img/colliding_waveDM_halo.png);
     background-position: center;
     background-repeat: no-repeat;
 }
