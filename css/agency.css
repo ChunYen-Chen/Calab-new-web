@@ -13,6 +13,10 @@ body {
     color: #777;
 }
 
+.text-white {
+    color: #ffffff;
+}
+
 .text-primary {
     color: #fed136;
 }
