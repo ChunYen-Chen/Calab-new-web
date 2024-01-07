@@ -72,6 +72,26 @@ h6 {
     background-color: #222;
 }
 
+.bg-dimer-color {
+    background-color: #001000;
+}
+
+
+.bg-trans-light-gray {
+    background-color:rgba(255, 255, 255, 0.95);
+}
+
+.bg-halo {
+    background-attachment: fixed;
+    background-image: url(img/volume_rendering.png);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 .btn-primary {
     border-color: #fed136;
     text-transform: uppercase;
@@ -733,6 +753,8 @@ section#contact .text-danger {
 }
 
 footer {
+    background-color: #222;
+    color: #fff;
     padding: 25px 0;
     text-align: center;
 }
