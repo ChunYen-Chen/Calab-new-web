@@ -198,6 +198,26 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fff;
 }
 
+.opening-animation {
+  animation: opening 2s ease-out forwards; /* Adjust the animation duration as needed */
+  opacity: 0;
+}
+
+@keyframes opening {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.visible {
+  opacity: 1;
+}
+
 .navbar-default {
     border-color: transparent;
     background-color: #222;
