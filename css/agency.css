@@ -92,6 +92,11 @@ h6 {
     -o-background-size: cover;
 }
 
+.border-black {
+    border-style: solid;
+    border-width: 5px;
+}
+
 .btn-primary {
     border-color: #fed136;
     text-transform: uppercase;
