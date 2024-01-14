@@ -8,9 +8,22 @@
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
+        var animate_speed = 'easeInOutExpo';
+        var animate_duration = 1500;
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+        }, animate_duration, animate_speed);
+        event.preventDefault();
+    });
+});
+$(function() {
+    $('a.page-scroll-slow').bind('click', function(event) {
+        var $anchor = $(this);
+        var animate_speed = 'easeInOutExpo';
+        var animate_duration = 3000;
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, animate_duration, animate_speed);
         event.preventDefault();
     });
 });
