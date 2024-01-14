@@ -214,6 +214,11 @@ fieldset[disabled] .btn-xl.active {
   opacity: 0;
 }
 
+.opening-animation-from-bottom {
+  animation: opening-from-bottom 2s ease-out forwards; /* Adjust the animation duration as needed */
+  opacity: 0;
+}
+
 @keyframes opening {
   0% {
     opacity: 0;
@@ -225,8 +230,38 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 
+@keyframes opening-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(+100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .visible {
   opacity: 1;
+}
+
+.div-video {
+  text-align: center;
+}
+
+.video-fixed {
+    /*position: fixed;*/
+}
+
+.video {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    bottom: 0;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
 }
 
 .navbar-default {
@@ -325,7 +360,8 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: fixed;
-    background-image: url(img/volume_rendering.png);
+    /*background-image: url(img/volume_rendering.png);*/
+    background-color:#000000;
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
