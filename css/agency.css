@@ -75,6 +75,10 @@ h6 {
     margin: 0 auto;
 }
 
+.img-team {
+    max-width: 239px;
+}
+
 .bg-light-gray {
     background-color: #f7f7f7;
 }
