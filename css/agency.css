@@ -787,6 +787,25 @@ section h3.section-subheading {
     margin-top: 0;
 }
 
+.team-member-2 {
+    text-align: center;
+}
+
+.team-member-2 img {
+    margin: 0 auto;
+    border: 7px solid #fff;
+}
+
+.team-member-2 h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+}
+
+.team-member-2 p {
+    margin-top: 0;
+}
+
 aside.clients img {
     margin: 50px auto;
 }
@@ -876,6 +895,15 @@ footer ul.quicklinks {
     text-transform: none;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
+}
+
+.member-list {
+    border-top: solid;
+    padding-top: 10px;
+}
+
+.member-list li {
+    text-align: center;
 }
 
 ul.social-buttons {
