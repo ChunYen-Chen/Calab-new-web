@@ -1014,6 +1014,38 @@ ul.social-buttons li a:active {
     opacity: 0;
 }
 
+.publication {
+}
+
+.publication-title {
+    margin-left:20px;
+}
+
+.publication-author {
+    margin-left:20px;
+}
+
+.publication-link {
+    margin-left:20px;
+}
+
+.custom-ol {
+  list-style: none; /* Remove default list styles */
+  padding-left: 0; /* Remove default padding */
+}
+
+.custom-ol li {
+  display: block; /* Customize the appearance of list items */
+  margin-bottom: 10px; /* Add spacing between list items */
+}
+
+.custom-ol li::before {
+  float: left;
+  content: counter(list-item); /* Use counter to insert the index number */
+  counter-increment: list-item; /* Increment the counter for each item */
+  margin-right: 5px; /* Add spacing between index number and content */
+}
+
 ::-moz-selection {
     text-shadow: none;
     background: #fed136;
