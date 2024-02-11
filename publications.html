@@ -94,33 +94,38 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2" style="border:solid; border-radius:5%;">
+                <div class="col-md-2" style="border:solid; border-radius:5%; padding-top:5px; padding-bottom:5px;">
                     <div class="text-muted">
                         <h4 style="margin:0px;">Filters</h4>
                     </div>
-                    <div>
-                        <input type="checkbox" id="2025" onchange="filterItemsById()"/>
-                        <label for="2025">2025</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="2024" onchange="filterItemsById()"/>
-                        <label for="2024">2024</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="2023" onchange="filterItemsById()"/>
-                        <label for="2023">2023</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="2022" onchange="filterItemsById()"/>
-                        <label for="2022">2022</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="2021" onchange="filterItemsById()"/>
-                        <label for="2021">2021</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="2020" onchange="filterItemsById()"/>
-                        <label for="2020">2020</label>
+                    <div class="filter-type">
+                        <button id="filter-year" value="true" style="border:none;background-color: transparent;padding:0px;"><i class="fa fa-chevron-right"></i></button> Year
+                        <ul id="filter-year-list" style="padding:0px; list-style-type: none; margin:0px;">
+                            <li>
+                                <input type="checkbox" id="2025" onchange="filterItemsById()"/>
+                                <label for="2025">2025</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="2024" onchange="filterItemsById()"/>
+                                <label for="2024">2024</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="2023" onchange="filterItemsById()"/>
+                                <label for="2023">2023</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="2022" onchange="filterItemsById()"/>
+                                <label for="2022">2022</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="2021" onchange="filterItemsById()"/>
+                                <label for="2021">2021</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="2020" onchange="filterItemsById()"/>
+                                <label for="2020">2020</label>
+                            </li>
+                        </ul>
                     </div>
                     <div>
                         <input type="checkbox" id="GAMER" onchange="filterItemsById()"/>
@@ -263,6 +268,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
     <script src="js/topButton.js"></script>
+    <script src="js/filter.js"></script>
     <script src="js/publicationFilter.js"></script>
 
 </body>

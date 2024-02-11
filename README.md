@@ -5,3 +5,23 @@
 Sponser picture size: 200x50
 Project picture size: 400x289 / 600x450
 Meember picture size: 225x225 => need to be square (size can be random?)
+
+
+* fix the favicon
+* fix the figure of project and member
+* fix the start animation
+* fix the small width layout
+* fix the image class `img-project`
+* fix the blank when too less content of the page
+* fix the publication filters (initialize hide but still show at start)
+
+* clean the warning from the map
+
+* write a simple python code to generate the basic publication html content?
+* sort button of publucation?
+* a fold navbar e.g. (member => prof, RA, PHD...)
+* check the mobile version
+* fill term of use and privacy policy at footer
+* re-layout the footer
+* optimize the load speed (https://pagespeed.web.dev/)
+* make the news button to be a real button
