@@ -20,8 +20,9 @@ Meember picture size: 225x225 => need to be square (size can be random?)
 * write a simple python code to generate the basic publication html content?
 * sort button of publucation?
 * a fold navbar e.g. (member => prof, RA, PHD...)
-* check the mobile version
+* check the mobile version (include the css setting)
 * fill term of use and privacy policy at footer
 * re-layout the footer
 * optimize the load speed (https://pagespeed.web.dev/)
 * make the news button to be a real button
+* share the footer and the header
