@@ -11,7 +11,7 @@ Meember picture size: 225x225 => need to be square (size can be random?)
 * fix the start animation
 * fix the small width layout
 * fix the image class `img-project`
-* fix the blank when too less content of the page
+* fix the blank when too less content of the page (temp solved by set a const height of body. solution should be using JS)
 * fix the publication filters (initialize hide but still show at start)
 
 * clean the warning from the map
