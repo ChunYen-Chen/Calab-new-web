@@ -932,6 +932,7 @@ ul.social-buttons li a:active {
 }
 
 ul.year-button li {
+    cursor: pointer;
     border: solid;
     border-color: #777;
     border-radius: 10px;
@@ -939,6 +940,20 @@ ul.year-button li {
     color: #777;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+}
+
+ul.year-button li a {
+    color: #777;
+    text-decoration: none;
+}
+
+ul.year-button li:hover a {
+    color: #fec503;
+    text-decoration: none;
+}
+
+ul.year-button li:hover {
+    border-color: #fec503;
 }
 
 .btn:focus,

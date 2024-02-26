@@ -7,7 +7,6 @@ Project picture size: 400x289 / 600x450
 Meember picture size: 225x225 => need to be square (size can be random?)
 
 
-* fix the favicon
 * fix the figure of project and member
 * fix the start animation
 * fix the small width layout
@@ -24,5 +23,4 @@ Meember picture size: 225x225 => need to be square (size can be random?)
 * fill term of use and privacy policy at footer
 * re-layout the footer
 * optimize the load speed (https://pagespeed.web.dev/)
-* make the news button to be a real button
 * share the footer and the header
