@@ -1,12 +1,21 @@
+## Website
+[CA Lab Website](https://chunyen-chen.github.io/Calab-new-web.github.io/)
+
 ## Reference
 [Original reference](https://github.com/learning-zone/website-templates)
 [Font Awesome](https://fontawesome.com/v6/download)
 
+## Maintenance
+1. Add a new publication
+ Use the `script/bib2html.py`
+
+2. Picture size
 Sponser picture size: 200x50
 Project picture size: 400x289 / 600x450
 Meember picture size: 225x225 => need to be square (size can be random?)
 
 
+## TODO
 * fix the figure of project and member
 * fix the start animation
 * fix the small width layout
