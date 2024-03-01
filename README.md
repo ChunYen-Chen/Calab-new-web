@@ -16,7 +16,6 @@ Meember picture size: 225x225 => need to be square (size can be random?)
 
 * clean the warning from the map
 
-* write a simple python code to generate the basic publication html content?
 * sort button of publucation?
 * a fold navbar e.g. (member => prof, RA, PHD...)
 * check the mobile version (include the css setting)
