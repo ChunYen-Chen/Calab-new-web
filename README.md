@@ -28,7 +28,6 @@
 * fix the figure of project and member
 * fix the start animation
 * fix the small width layout
-* fix the image class `img-project`
 * fix the blank when too less content of the page (temp solved by set a const height of body. solution should be using JS)
 * fix the publication filters (initialize hide but still show at start)
 
