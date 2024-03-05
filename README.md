@@ -26,7 +26,6 @@
 ## TODO
 ### Fix
 * fix the figure of project and member
-* fix the start animation
 * fix the small width layout
 * fix the blank when too less content of the page (temp solved by set a const height of body. solution should be using JS)
 * fix the publication filters (initialize hide but still show at start)
@@ -35,6 +34,8 @@
 * clean the warning from the map
 
 ### Optimizations
+* Redesign the first page
+* Add the about to the scrolling animation
 * sort button of publucation?
 * a fold navbar e.g. (member => prof, RA, PHD...)
 * check the mobile version (include the css setting)
