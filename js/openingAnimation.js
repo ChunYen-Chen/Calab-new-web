@@ -28,28 +28,28 @@ window.onscroll = function(){
 };
 
 // refresh video frames on interval for smoother playback
-setInterval(function(){
-    var speed = 10;
-    var rect = vid.getBoundingClientRect();
-    var rect_nav = nav.getBoundingClientRect();
-    var barOffset = 0;
-    //var barOffset = rect_nav.bottom;
-    //console.log(rect_nav);
-    //console.log(window.pageYOffset);
-    //console.log(rect);
-    //console.log(rect_nav.bottom, rect.top, rect.bottom);
-    if ( 0 <= rect.top - barOffset ) {
-        vid.currentTime = 0;
-        vid.classList.remove('video-fixed');
-    } else if ( 0 >= rect.bottom - barOffset ) {
-        vid.currentTime = vid.duration;
-        vid.classList.remove('video-fixed');
-    } else {
-        vid.classList.add('video-fixed');
-        vid.style.top = barOffset;
-        vid.currentTime = (barOffset - rect.top)/speed;
-    }
-}, 40);
+//setInterval(function(){
+//    var speed = 10;
+//    var rect = vid.getBoundingClientRect();
+//    var rect_nav = nav.getBoundingClientRect();
+//    var barOffset = 0;
+//    //var barOffset = rect_nav.bottom;
+//    //console.log(rect_nav);
+//    //console.log(window.pageYOffset);
+//    //console.log(rect);
+//    //console.log(rect_nav.bottom, rect.top, rect.bottom);
+//    if ( 0 <= rect.top - barOffset ) {
+//        vid.currentTime = 0;
+//        vid.classList.remove('video-fixed');
+//    } else if ( 0 >= rect.bottom - barOffset ) {
+//        vid.currentTime = vid.duration;
+//        vid.classList.remove('video-fixed');
+//    } else {
+//        vid.classList.add('video-fixed');
+//        vid.style.top = barOffset;
+//        vid.currentTime = (barOffset - rect.top)/speed;
+//    }
+//}, 40);
 
 
 setInterval(function(){
