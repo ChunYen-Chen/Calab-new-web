@@ -51,3 +51,25 @@ setInterval(function(){
     }
 }, 40);
 
+
+setInterval(function(){
+    // select video element
+    var vid = document.getElementById('halo-mp4-2');
+    var vid_div = document.getElementById('halo-div-2');
+    var rect = vid.getBoundingClientRect();
+    var rect2 = vid_div.getBoundingClientRect();
+    var barOffset = 0;
+    var time = (-rect2.top) / (rect2.height - rect.height);
+    if ( isNaN(time) ) { time = 0; }
+    if ( time <= 0 ) {
+        vid.style.position = "absoulte";
+        vid.currentTime = 0;
+    } else if ( time >= 1 ) {
+        vid.style.position = "absoulte";
+        vid.currentTime = vid.duration;
+    } else {
+        vid.style.position = "sticky";
+        vid.style.top = 0;
+        vid.currentTime = vid.duration * time;
+    }
+}, 40);
