@@ -43,14 +43,14 @@
 * clean all the empty links
 * link all the members to their section in member page
 * Add the readme or instruction about the maintenance of website
+* fill the words which need to be filled
 
 ### Optimizations
 * Redesign the first page
-* Add the about info to the scrolling animation
 * sort button of publucation?
 * a fold navbar e.g. (member => prof, RA, PHD...)
 * check the mobile version (include the css setting)
-* fill term of use and privacy policy at footer
+* fill term of use and privacy policy at footer [This](https://www.termsofusegenerator.net) and  [This](https://termify.io/privacy-policy-generator?gad_source=1&gclid=CjwKCAiAopuvBhBCEiwAm8jaMSbkpk0Mk7J4fZngmu3RuioKEHaxlYKaBKgx_55PW-REAaizBIze5BoC0NIQAvD_BwE)
 * re-layout the footer
 * optimize the load speed (https://pagespeed.web.dev/ or use the Edge insight)
 * share the footer and the header
