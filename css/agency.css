@@ -24,6 +24,10 @@ body {
     color: #fed136;
 }
 
+.anchor-offset {
+    scroll-margin-top: 70px; /* this should be the navgation bar height*/
+}
+
 p {
     font-size: 14px;
     line-height: 1.75;
