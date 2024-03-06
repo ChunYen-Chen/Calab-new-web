@@ -9,18 +9,23 @@
 
 ## Maintenance
 1. Rules of the home page
-  * less than 5 news (news in home should be happened in previous year or this year)
-  * less than 12 members
-  * less than 5 publications
-  * less than 6 courses
+   * less than 5 news (news in home should be happened in previous year or this year)
+   * less than 12 members
+   * less than 5 publications
+   * less than 6 courses
 
 1. Add a new publication
-  * Use the `script/bib2html.py`
+   * Use the `script/bib2html.py`
 
 1. Picture size
-  * Sponser picture size: 200x50
-  * Project picture size: 400x289 / 600x450
-  * Member  picture size: 225x225 => need to be square (size can be random?)
+   * Sponser picture size: 200x50
+   * Project picture size: 400x289 / 600x450
+   * Member  picture size: 225x225 => need to be square (size can be random?)
+
+1. Add a new member
+   * Image size
+   * links
+   * set the id and class
 
 
 ## TODO
@@ -29,13 +34,19 @@
 * fix the small width layout
 * fix the blank when too less content of the page (temp solved by set a const height of body. solution should be using JS)
 * fix the publication filters (initialize hide but still show at start)
+* let the content change width to be a variable in css (complex!!!)
 
 ### Warning
 * clean the warning from the map
 
+### Before to go
+* clean all the empty links
+* link all the members to their section in member page
+* Add the readme or instruction about the maintenance of website
+
 ### Optimizations
 * Redesign the first page
-* Add the about to the scrolling animation
+* Add the about info to the scrolling animation
 * sort button of publucation?
 * a fold navbar e.g. (member => prof, RA, PHD...)
 * check the mobile version (include the css setting)
