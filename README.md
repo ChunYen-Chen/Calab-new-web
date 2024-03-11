@@ -27,12 +27,15 @@
    * links
    * set the id and class
 
+1. Minify the CSS
+   * use the `script/minifyCSS.py` (not tested yet)
 
 ## TODO
 ### Fix
-* fix the figure of project and member
+* fix the figure of project and member => use github workflow?
 * fix the small width layout
 * let the content change width to be a variable in css (complex!!!)
+* check the mobile version (include the css setting)
 
 ### Warning
 * clean the warning from the map
@@ -48,7 +51,6 @@
 * Redesign the first page
 * sort button of publucation?
 * a fold navbar e.g. (member => prof, RA, PHD...)
-* check the mobile version (include the css setting)
 * fill term of use and privacy policy at footer [This](https://www.termsofusegenerator.net) and  [This](https://termify.io/privacy-policy-generator?gad_source=1&gclid=CjwKCAiAopuvBhBCEiwAm8jaMSbkpk0Mk7J4fZngmu3RuioKEHaxlYKaBKgx_55PW-REAaizBIze5BoC0NIQAvD_BwE)
 * re-layout the footer
 * optimize the load speed (https://pagespeed.web.dev/ or use the Edge insight)
