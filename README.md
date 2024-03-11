@@ -32,8 +32,6 @@
 ### Fix
 * fix the figure of project and member
 * fix the small width layout
-* fix the blank when too less content of the page (temp solved by set a const height of body. solution should be using JS)
-* fix the publication filters (initialize hide but still show at start)
 * let the content change width to be a variable in css (complex!!!)
 
 ### Warning
@@ -46,6 +44,7 @@
 * fill the words which need to be filled
 
 ### Optimizations
+* the publication filters initialized as hide but still show at start
 * Redesign the first page
 * sort button of publucation?
 * a fold navbar e.g. (member => prof, RA, PHD...)
