@@ -412,10 +412,10 @@ header {
     background-size: cover;
     -o-background-size: cover;
     */
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    background-size: contain;
-    -o-background-size: contain;
+    -webkit-background-size: contain !important;
+    -moz-background-size: contain !important;
+    background-size: contain !important;
+    -o-background-size: contain !important;
     height:100vh;
 }
 
