@@ -30,6 +30,9 @@
 1. Minify the CSS
    * use the `script/minifyCSS.py` (not tested yet)
 
+## Tips
+1. [Greeks character in HTML](https://www.thoughtco.com/html-codes-greek-characters-4062212)
+
 ## TODO
 ### Fix
 * fix the small width layout
