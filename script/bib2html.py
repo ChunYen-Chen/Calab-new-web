@@ -1,4 +1,17 @@
 #!/bin/python3
+"""
+A simple tool of converting .bib to the html content of website.
+
+How to use:
+  python3 bib2html.py -h
+
+Quick start:
+  python3 bib2html.py [*.bib files]
+
+Probably need to be modified by your useage:
+  1. the authors will be highlighted => `self.highlight`
+  2. html format => `self.add_list_element()`
+"""
 
 import argparse
 
@@ -7,11 +20,12 @@ import argparse
 #====================================================================================================
 class bibtex():
     def __init__( self, bibtext_file ):
+        self.highlight_author = [ "Hsi-Yu Schive" ]     # The authors will be highlighted by <strong> in HTML
         bib_dict = self.text2dict( bibtext_file )
         self.title  = bib_dict.pop("title")
         self.author = self.clean_author( bib_dict.pop("author") )
         self.year   = bib_dict.pop("year")
-        self.link   = bib_dict.pop("url")
+        self.doi    = bib_dict.pop("doi", None)
         self.other  = bib_dict
         return
 
@@ -80,32 +94,52 @@ class bibtex():
         # 1. title
         # 2. author
         # 3. link
-        out_text  = ''
-        out_text += '<li class="text-muted publication" data-tags="%s">\n'%self.year
-        out_text += '    <div class="publication-title">\n'
-        out_text += '        %s\n'%self.title
-        out_text += '    </div>\n'
-        out_text += '    <div class="publication-author">\n'
-        out_text += '        %s\n'%self.author
-        out_text += '    </div>\n'
-        out_text += '    <div class="publication-link">\n'
-        out_text += '        <a href="%s">link name</a>\n'%self.link
-        out_text += '    </div>\n'
-        out_text += '</li>'
+        out_text = self.add_list_element( "" )
         print(out_text)
         return out_text
+
+    def add_list_element(self, text):
+        text += '<li class="text-muted publication" data-tags="%s">\n'%self.year
+        text = self.add_title( text )
+        text = self.add_author( text )
+        if self.doi != None: text = self.add_link( text )
+        text += '</li>'
+        return text
+
+    def add_title(self, text):
+        text += '    <div class="publication-title">\n'
+        text += '        %s\n'%self.title
+        text += '    </div>\n'
+        return text
+
+    def add_author(self, text):
+        text += '    <div class="publication-author">\n'
+        text += '        %s\n'%self.author
+        text += '    </div>\n'
+        return text
+
+    def add_link(self, text):
+        text += '    <div class="publication-link">\n'
+        text += '        <a href="https://doi.org/%s">doi: %s</a>\n'%(self.doi, self.doi)
+        text += '    </div>\n'
+        return text
 
     def clean_author(self, ugly_author):
         temp_author = ugly_author.split(" and ")
         out_author = []
         for author in temp_author:
             if "{" in author:
-                temp = author.split("},")
-                temp_author = temp[1] + " "+ temp[0][1:]
-                out_author.append(temp_author)
+                temp1 = author.split("},")
+                temp2 = temp1[1] + " "+ temp1[0][1:]
             else:
-                out_author.append(author)
+                temp2 = author
 
+            if temp2[0] == " ":
+                temp2 = temp2[1:]
+
+            if temp2 in self.highlight_author:
+                temp2 = "<strong>" + temp2 + "</strong>"
+            out_author.append(temp2)
         out_author[-1] = "and " + out_author[-1]
         return ", ".join(out_author)
 
