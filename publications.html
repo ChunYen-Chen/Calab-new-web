@@ -94,12 +94,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2" style="border:solid; border-radius:10px; padding-top:5px; padding-bottom:5px;">
+                <div class="col-md-2 publication-filter">
                     <div class="text-muted">
                         <h4 style="margin:0px;">Filters</h4>
                     </div>
-                    <div class="filter-type">
-                        <button id="filter-year" value="true" style="border:none;background-color: transparent;padding:0px;"><i class="fa fa-chevron-right"></i></button> Year
+                    <div class="publication-filter-collpase">
+                        <button id="filter-year" class="publication-collpase-button" value="true"><i class="fa fa-chevron-right"></i></button> Year
                         <ul id="filter-year-list" style="padding-left:10px; list-style-type: none; margin:0px;">
                             <li>
                                 <input type="checkbox" id="2025" onchange="filterItemsById()"/>
@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                    <ol class="custom-ol">
+                    <ol class="publication-ol">
                         <li class="text-muted publication" data-tags="2025 GAMER">
                             <div class="publication-title">
                                 GAMER-2: a GPU-accelerated adaptive mesh refinement code -- accuracy, performance, and scalability

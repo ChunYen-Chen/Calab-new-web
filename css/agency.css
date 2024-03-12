@@ -1050,6 +1050,22 @@ ul.year-button li:hover {
     opacity: 0;
 }
 
+.publication-filter {
+    border: solid;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.publication-filter-collpase {
+}
+
+.publication-collpase-button {
+    border: none;
+    background-color: transparent;
+    padding: 0px;
+}
+
 .publication {
 }
 
@@ -1065,17 +1081,17 @@ ul.year-button li:hover {
     margin-left:20px;
 }
 
-.custom-ol {
+.publication-ol {
   list-style: none; /* Remove default list styles */
   padding-left: 0; /* Remove default padding */
 }
 
-.custom-ol li {
+.publication-ol li {
   display: block; /* Customize the appearance of list items */
   margin-bottom: 10px; /* Add spacing between list items */
 }
 
-.custom-ol li::before {
+.publication-ol li::before {
   float: left;
   content: counter(list-item); /* Use counter to insert the index number */
   counter-increment: list-item; /* Increment the counter for each item */
