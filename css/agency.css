@@ -401,8 +401,8 @@ fieldset[disabled] .btn-xl.active {
 header {
     text-align: center;
     color: #fff;
-    /*background-attachment: fixed;*/
-    background-attachment: scroll;
+    background-attachment: fixed; /* Bug for the ios! See: https://caniuse.com/?search=background-attachment%3A*/
+    /*background-attachment: scroll;*/
     background-image: url(img/volume_rendering.png);
     background-color:#000000;
     background-position: center center;
