@@ -401,21 +401,16 @@ fieldset[disabled] .btn-xl.active {
 header {
     text-align: center;
     color: #fff;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
+    background-attachment: scroll;
     background-image: url(img/volume_rendering.png);
     background-color:#000000;
     background-position: center center;
     background-repeat: no-repeat;
-    /*
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    */
-    -webkit-background-size: 50px 50px;
-    -moz-background-size: 50px 50px;
-    background-size: 50px 50px;
-    -o-background-size: 50px 50px;
     height:100vh;
 }
 
