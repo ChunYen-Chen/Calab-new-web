@@ -20,7 +20,7 @@
 1. Picture size
    * Sponser picture size: 200x50
    * Project picture size: 400x289 / 600x450
-   * Member  picture size: 225x225 => need to be square (size can be random?)
+   * Member  picture size: 225x225 (best), or a square img (size can be random)
 
 1. Add a new member
    * Image size
@@ -32,7 +32,6 @@
 
 ## TODO
 ### Fix
-* fix the figure of project and member => use github workflow?
 * fix the small width layout
 * let the content change width to be a variable in css (complex!!!)
 * check the mobile version (include the css setting)
@@ -47,6 +46,7 @@
 * fill the words which need to be filled
 
 ### Optimizations
+* check the figure of project and member => use github workflow?
 * the publication filters initialized as hide but still show at start
 * Redesign the first page
 * sort button of publucation?
