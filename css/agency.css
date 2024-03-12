@@ -405,11 +405,17 @@ header {
     background-image: url(img/volume_rendering.png);
     background-color:#000000;
     background-position: center center;
-    background-repeat: none;
+    background-repeat: no-repeat;
+    /*
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    */
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    -o-background-size: contain;
     height:100vh;
 }
 
