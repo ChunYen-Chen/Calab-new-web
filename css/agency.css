@@ -416,11 +416,12 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
+/*
+Bug for the ios! See: https://caniuse.com/?search=background-attachment%3A
 header {
     text-align: center;
     color: #fff;
-    background-attachment: fixed; /* Bug for the ios! See: https://caniuse.com/?search=background-attachment%3A*/
-    /*background-attachment: scroll;*/
+    background-attachment: fixed;
     background-image: url(img/volume_rendering.png);
     background-color:#000000;
     background-position: center center;
@@ -430,6 +431,31 @@ header {
     background-size: cover;
     -o-background-size: cover;
     height:100vh;
+}
+*/
+
+header {
+    text-align: center;
+    color: #fff;
+    background-color:#000000;
+    height:100vh;
+}
+
+header:before {
+    /* Solution of bug on Safari and ios browser. Please checkout README.md for the bug detail.*/
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url(img/volume_rendering.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 header .intro-text {
