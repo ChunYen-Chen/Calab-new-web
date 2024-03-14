@@ -870,6 +870,11 @@ section#contact {
     background-image: url(img/colliding_waveDM_halo.png);
     background-position: center;
     background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+
 }
 
 section#contact .section-heading {

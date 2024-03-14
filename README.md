@@ -30,8 +30,6 @@
 1. Minify the CSS
    * use the `script/minifyCSS.py` (not tested yet)
 
-
-
 ## Known bugs
 1. `background-attachment: fixed;` does not work on any ios devices. See [here](https://caniuse.com/?search=background-attachment%3A).
 One possible [solution](https://stackoverflow.com/questions/26372127/background-fixed-no-repeat-not-working-on-mobile)?
@@ -49,6 +47,7 @@ One possible [solution](https://stackoverflow.com/questions/26372127/background-
 * let the content change width to be a variable in css (complex!!!)
 * check the mobile version (include the css setting)
 * use the `@media` to control the text in the video
+* Try to let the background of contact to be fixed
 
 ### Warning
 * clean the warning from the map
