@@ -19,76 +19,14 @@ import argparse
 # Classes
 #====================================================================================================
 class bibtex():
-    def __init__( self, bibtext_file ):
+    def __init__( self, bib_dict ):
         self.highlight_author = [ "Hsi-Yu Schive" ]     # The authors will be highlighted by <strong> in HTML
-        bib_dict = self.text2dict( bibtext_file )
         self.title  = bib_dict.pop("title")
         self.author = self.clean_author( bib_dict.pop("author") )
         self.year   = bib_dict.pop("year")
         self.doi    = bib_dict.pop("doi", None)
         self.other  = bib_dict
         return
-
-    def text2dict( self, file_name ):
-        with open( file_name, "r" ) as f:
-            text = ''.join( f.readlines() )
-
-        start = False
-        first_comma = True
-        section = 0
-        store_key = True
-        key_name = ""
-        key_value = ""
-        bib_dict = {}
-        for t in text:
-            # skip until first {
-            if t == "{" and not start:
-                start = True
-                continue
-            if not start: continue
-
-            # last }
-            if t == "}" and section == 0:
-                bib_dict[key_name.lower()] = key_value
-
-            # skip the blank and change line
-            if t == " "  and section == 0: continue
-            if t == "\n" and section == 0: continue
-
-            # check the section
-            if t == "{":
-                section += 1
-                if section == 1: continue
-
-            if t == "}":
-                section -= 1
-                if section == 0: continue
-
-            if t == "=" and section == 0:
-                store_key = False
-                continue
-
-            # store the value
-            if t == "," and section == 0:
-                # skip the first element in {}
-                if first_comma:
-                    first_comma = False
-                    store_key = True
-                    key_name = ""
-                    key_value = ""
-                else:
-                    bib_dict[key_name.lower()] = key_value
-                    store_key = True
-                    key_name = ""
-                    key_value = ""
-                continue
-
-            if store_key:
-                key_name += t
-            else:
-                key_value += t
-
-        return bib_dict
 
     def generate_html(self):
         # 1. title
@@ -143,6 +81,71 @@ class bibtex():
         out_author[-1] = "and " + out_author[-1]
         return ", ".join(out_author)
 
+def text2bibtex( file_name ):
+    with open( file_name, "r" ) as f:
+        text = ''.join( f.readlines() )
+
+    start = False
+    first_comma = True
+    section = 0
+    store_key = True
+    key_name = ""
+    key_value = ""
+    bib_dict_arr = []
+    bib_dict = {}
+    for t in text:
+        # skip until first {
+        if t == "{" and not start:
+            start = True
+            continue
+        if not start: continue
+
+        # last }
+        if t == "}" and section == 0:
+            bib_dict[key_name.lower()] = key_value
+            bib_dict_arr.append(bib_dict.copy())
+            bib_dict = {}
+
+        # skip the blank and change line
+        if t == " "  and section == 0: continue
+        if t == "\n" and section == 0: continue
+
+        # check the section
+        if t == "{":
+            section += 1
+            if section == 1: continue
+
+        if t == "}":
+            section -= 1
+            if section == 0: continue
+
+        if t == "=" and section == 0:
+            store_key = False
+            continue
+
+        # store the value
+        if t == "," and section == 0:
+            # skip the first element in {}
+            if first_comma:
+                first_comma = False
+                store_key = True
+                key_name = ""
+                key_value = ""
+            else:
+                bib_dict[key_name.lower()] = key_value
+                store_key = True
+                key_name = ""
+                key_value = ""
+            continue
+
+        if store_key:
+            key_name += t
+        else:
+            key_value += t
+
+    bib_arr = [ bibtex(bib_dict) for bib_dict in bib_dict_arr ]
+
+    return bib_arr
 
 
 
@@ -158,5 +161,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     for file in args.filename:
-        B = bibtex( file )
-        B.generate_html()
+        bib_arr = text2bibtex( file )
+        for B in bib_arr:
+            B.generate_html()
