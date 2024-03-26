@@ -46,7 +46,6 @@ One possible [solution](https://stackoverflow.com/questions/26372127/background-
 * fix the small width layout
 * let the content change width to be a variable in css (complex!!!)
 * check the mobile version (include the css setting)
-* use the `@media` to control the text in the video
 * Try to let the background of contact to be fixed
 
 ### Warning
