@@ -11,9 +11,12 @@ Quick start:
 Probably need to be modified by your useage:
   1. the authors will be highlighted => `self.highlight`
   2. html format => `self.add_list_element()`
+  3. only the "@article" is included => `published` in `text2bibtex()`
 """
 
 import argparse
+
+
 
 #====================================================================================================
 # Classes
@@ -81,63 +84,74 @@ class bibtex():
         out_author[-1] = "and " + out_author[-1]
         return ", ".join(out_author)
 
+
+
+#====================================================================================================
+# Functions
+#====================================================================================================
 def text2bibtex( file_name ):
     with open( file_name, "r" ) as f:
         text = ''.join( f.readlines() )
 
-    start = False
+    published = True
     first_comma = True
-    section = 0
+    section = -1
     store_key = True
+    store_to_dict = False
     key_name = ""
     key_value = ""
     bib_dict_arr = []
     bib_dict = {}
     for t in text:
-        # skip until first {
-        if t == "{" and not start:
-            start = True
-            continue
-        if not start: continue
-
-        # last }
-        if t == "}" and section == 0:
-            bib_dict[key_name.lower()] = key_value
-            bib_dict_arr.append(bib_dict.copy())
-            bib_dict = {}
-
-        # skip the blank and change line
-        if t == " "  and section == 0: continue
-        if t == "\n" and section == 0: continue
-
-        # check the section
+        # section controll
         if t == "{":
             section += 1
             if section == 1: continue
-
         if t == "}":
             section -= 1
             if section == 0: continue
+
+        # check the name
+        if t == "{" and section == 0:
+            published = (key_name.upper() == "@ARTICLE")
+            key_name = ""
+            continue
+
+        # last }
+        if t == "}" and section == -1:
+            bib_dict[key_name.lower()] = key_value
+            if published : bib_dict_arr.append(bib_dict.copy())
+            bib_dict = {}
+
+        # skip the blank and change line
+        if t == " "  and section <= 0: continue
+        if t == "\n" and section <= 0: continue
+
+        # check the section
+        if t == "{" and section == 0:
+            store_key = True
+            continue
+
+        if t == "}" and section == -1:
+            store_to_dict = True
 
         if t == "=" and section == 0:
             store_key = False
             continue
 
-        # store the value
         if t == "," and section == 0:
-            # skip the first element in {}
-            if first_comma:
-                first_comma = False
-                store_key = True
-                key_name = ""
-                key_value = ""
-            else:
-                bib_dict[key_name.lower()] = key_value
-                store_key = True
-                key_name = ""
-                key_value = ""
+            store_to_dict = True
+
+        # store the value
+        if store_to_dict:
+            store_to_dict = False
+            store_key = True
+            bib_dict[key_name.lower()] = key_value
+            key_name = ""
+            key_value = ""
             continue
 
+        # collect text
         if store_key:
             key_name += t
         else:
