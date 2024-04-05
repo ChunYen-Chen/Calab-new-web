@@ -17,10 +17,14 @@
 1. Add a new publication
    * Use the `script/bib2html.py`
 
-1. Picture size
+1. Picture
+   * File format: `.webp` would be best.
    * Sponser picture size: 200x50
    * Project picture size: 400x289 / 600x450
    * Member  picture size: 225x225 (best), or a square img (size can be random)
+
+1. Video
+   * File format: `.webm` would be the best.
 
 1. Add a new member
    * Image size
@@ -32,7 +36,7 @@
 
 ## Known bugs
 1. `background-attachment: fixed;` does not work on any ios devices. See [here](https://caniuse.com/?search=background-attachment%3A).
-One possible [solution](https://stackoverflow.com/questions/26372127/background-fixed-no-repeat-not-working-on-mobile)?
+Current [solution](https://stackoverflow.com/questions/26372127/background-fixed-no-repeat-not-working-on-mobile).
 
 ## Tips
 1. Add a Greeks character in HTML.
@@ -42,12 +46,6 @@ One possible [solution](https://stackoverflow.com/questions/26372127/background-
    * [Can I Use](https://caniuse.com/)
 
 ## TODO
-### Fix
-* fix the small width layout
-* let the content change width to be a variable in css (complex!!!)
-* check the mobile version (include the css setting)
-* Try to let the background of contact to be fixed
-
 ### Warning
 * clean the warning from the map
 
@@ -56,14 +54,17 @@ One possible [solution](https://stackoverflow.com/questions/26372127/background-
 * link all the members to their section in member page
 * Add the readme or instruction about the maintenance of website
 * fill the words which need to be filled
+* check the mobile version (include the css setting and different OS)
+* re-layout the footer
+* use the minimized .css and .js
 
 ### Optimizations
+* let the content change width to be a variable in css (complex!!!)
+* Try to let the background of contact to be fixed
 * check the figure of project and member => use github workflow?
 * the publication filters initialized as hide but still show at start
-* Redesign the first page
 * sort button of publucation?
 * a fold navbar e.g. (member => prof, RA, PHD...)
-* fill term of use and privacy policy at footer [This](https://www.termsofusegenerator.net) and  [This](https://termify.io/privacy-policy-generator?gad_source=1&gclid=CjwKCAiAopuvBhBCEiwAm8jaMSbkpk0Mk7J4fZngmu3RuioKEHaxlYKaBKgx_55PW-REAaizBIze5BoC0NIQAvD_BwE)
-* re-layout the footer
+* fill term of use and privacy policy at footer [This](https://www.termsofusegenerator.net) and [This](https://termify.io/privacy-policy-generator?gad_source=1&gclid=CjwKCAiAopuvBhBCEiwAm8jaMSbkpk0Mk7J4fZngmu3RuioKEHaxlYKaBKgx_55PW-REAaizBIze5BoC0NIQAvD_BwE)
 * optimize the load speed (https://pagespeed.web.dev/ or use the Edge insight)
 * share the footer and the header
