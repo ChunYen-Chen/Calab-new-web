@@ -4,7 +4,9 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-    --nav-collapse-width: 991px;
+    --nav-collapse-width: 991px; /* 767 */
+    --research-collapse-width: 991px;
+    /*1200 the wspace changes*/
 }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
