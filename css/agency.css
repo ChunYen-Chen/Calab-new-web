@@ -958,8 +958,9 @@ footer ul.quicklinks {
 }
 
 .member-list {
-    border-top: solid;
+    /* border-top: solid;*/
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .member-list li {
