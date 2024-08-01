@@ -8,9 +8,9 @@ How to use:
 Quick start:
   python3 bib2html.py [*.bib files]
 
-Probably need to be modified by your useage:
+Probably need to be modified by your usage:
   1. the authors will be highlighted => `self.highlight`
-  2. html format => `self.add_list_element()`
+  2. html format                     => `self.add_list_element()`
   3. only the "@article" is included => `published` in `text2bibtex()`
 """
 
