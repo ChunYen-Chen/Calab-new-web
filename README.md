@@ -43,8 +43,12 @@
 Current [solution](https://stackoverflow.com/questions/26372127/background-fixed-no-repeat-not-working-on-mobile).
 
 ## Tips
-1. Add a Greeks character in HTML.
-   * [website](https://www.thoughtco.com/html-codes-greek-characters-4062212)
+1. Add a special character in HTML.
+   * [Greek](https://www.thoughtco.com/html-codes-greek-characters-4062212)
+   * [German](https://websitebuilders.com/tools/html-codes/german/)
+   * [Math](https://www.toptal.com/designers/htmlarrows/math/)
+   * [Bar over character](https://stackoverflow.com/questions/12402831/print-a-with-bar-over-it-in-html)
+   * [Power of character](https://www.w3schools.com/tags/tag_sup.asp)
 
 1. Check if the CSS parameter is available across all devices
    * [Can I Use](https://caniuse.com/)
