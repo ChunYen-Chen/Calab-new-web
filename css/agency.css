@@ -78,6 +78,11 @@ h6 {
     color: #000;
 }
 
+.href-dark-yellow, .href-dark-yellow:hover {
+    color: #EAC700;
+    font-size: 16px;
+}
+
 .img-centered {
     margin: 0 auto;
 }
