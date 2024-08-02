@@ -34,6 +34,10 @@
 1. Minify the CSS
    * use the `script/minifyCSS.py` (not tested yet)
 
+1. Common html part
+   * the common html is placed under `script/common/`
+   * use the `script/replace_content.py` to replace the content
+
 ## Known bugs
 1. `background-attachment: fixed;` does not work on any ios devices. See [here](https://caniuse.com/?search=background-attachment%3A).
 Current [solution](https://stackoverflow.com/questions/26372127/background-fixed-no-repeat-not-working-on-mobile).
