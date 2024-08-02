@@ -15,6 +15,7 @@ Probably need to be modified by your usage:
 """
 
 import argparse
+import re
 
 
 
@@ -29,9 +30,11 @@ class bibtex():
         self.year   = bib_dict.pop("year")
         self.doi    = bib_dict.pop("doi", None)
         self.other  = bib_dict
+
+        self.replace_special_character()
         return
 
-    def generate_html(self):
+    def generate_html( self ):
         # 1. title
         # 2. author
         # 3. link
@@ -39,7 +42,7 @@ class bibtex():
         print(out_text)
         return out_text
 
-    def add_list_element(self, text):
+    def add_list_element( self, text ):
         text += '<li class="text-muted publication" data-tags="%s">\n'%self.year
         text = self.add_title( text )
         text = self.add_author( text )
@@ -47,25 +50,25 @@ class bibtex():
         text += '</li>'
         return text
 
-    def add_title(self, text):
+    def add_title( self, text ):
         text += '    <div class="publication-title">\n'
         text += '        %s\n'%self.title
         text += '    </div>\n'
         return text
 
-    def add_author(self, text):
+    def add_author( self, text ):
         text += '    <div class="publication-author">\n'
         text += '        %s\n'%self.author
         text += '    </div>\n'
         return text
 
-    def add_link(self, text):
+    def add_link( self, text ):
         text += '    <div class="publication-link">\n'
         text += '        <a href="https://doi.org/%s">doi: %s</a>\n'%(self.doi, self.doi)
         text += '    </div>\n'
         return text
 
-    def clean_author(self, ugly_author):
+    def clean_author( self, ugly_author ):
         temp_author = ugly_author.split(" and ")
         out_author = []
         for author in temp_author:
@@ -83,6 +86,23 @@ class bibtex():
             out_author.append(temp2)
         out_author[-1] = "and " + out_author[-1]
         return ", ".join(out_author)
+
+    def replace_special_character( self ):
+        # only replace title and author
+        patterns = { "umlaut"     :[r'\{\\"([a-zA-Z])\}'                , r'&\1uml;'      ],
+                     "acute"      :[r'\{\\\'([a-zA-Z])\}'               , r'&\1acute;'    ],
+                     "math"       :[r'\{\\ensuremath\{\\([a-zA-Z]+)\}\}', r'&\1;'         ],
+                     "macron"     :[r'\{\\\=\{([a-zA-Z])\}\}'           , r'&\1macr;'     ],
+                     "emptybraket":[r'\{\}'                             , r''             ],
+                     "superscript":[r'\$\^\{(.*?)\}'                    , r'<sup>\1</sup>'],
+                     "subscript"  :[r'\$\_\{(.*?)\}'                    , r'<sub>\1</sub>']
+                   }
+        for pattern, pair in patterns.items():
+            self.author, n = re.subn( pair[0], pair[1], self.author )
+            if n != 0: print(self.author)
+            self.title,  n = re.subn( pair[0], pair[1], self.title  )
+            if n != 0: print(self.title)
+        return
 
 
 
@@ -171,7 +191,7 @@ if __name__ == "__main__":
                                       description="Transform the .bib information to html content",
                                       epilog = "")
 
-    parser.add_argument('filename', nargs="+", help="The bibtex files")
+    parser.add_argument( 'filename', nargs="+", help="The bibtex files" )
     args = parser.parse_args()
 
     for file in args.filename:
