@@ -5,6 +5,11 @@ End   key: <!--$$$REPLACE_KEY$$$-->
 """
 import re
 
+
+
+#====================================================================================================
+# Functions
+#====================================================================================================
 def replace_section( filename, outname, content, keyword ):
     print( "Replacing content %20s: %30s => %30s"%(keyword, filename, outname) )
     start_key  = "<!--@@@" + keyword + "@@@-->"
@@ -32,8 +37,8 @@ def get_latest_publication( filename, N ):
     with open( filename, 'r' ) as f:
         lines = f.readlines()
 
-    target = []
-    start = False
+    target  = []
+    start   = False
     cur_num = 0
     for line in lines:
         if pattern_start in line: start = True
@@ -45,6 +50,11 @@ def get_latest_publication( filename, N ):
         if cur_num == N: break
     return ''.join(target)
 
+
+
+#====================================================================================================
+# Main
+#====================================================================================================
 if __name__ == "__main__":
     # get the common footer content
     with open( "common_html/footer.html", "r" ) as f:
