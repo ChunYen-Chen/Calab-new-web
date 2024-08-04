@@ -6,7 +6,7 @@ End   key: <!--$$$REPLACE_KEY$$$-->
 import re
 
 def replace_section( filename, outname, content, keyword ):
-    print("Replacing content %s: %30s => %30s"%(keyword, filename, outname))
+    print( "Replacing content %20s: %30s => %30s"%(keyword, filename, outname) )
     start_key  = "<!--@@@" + keyword + "@@@-->"
     end_key    = "<!--$$$" + keyword + "$$$-->"
 
@@ -25,6 +25,26 @@ def replace_section( filename, outname, content, keyword ):
                 write_mode = False
     return
 
+def get_latest_publication( filename, N ):
+    pattern_start = 'class="text-muted publication"'
+    pattern_end   = '</li>'
+
+    with open( filename, 'r' ) as f:
+        lines = f.readlines()
+
+    target = []
+    start = False
+    cur_num = 0
+    for line in lines:
+        if pattern_start in line: start = True
+        if not start: continue
+        target.append(line)
+        if pattern_end in line and start:
+            start = False
+            cur_num += 1
+        if cur_num == N: break
+    return ''.join(target)
+
 if __name__ == "__main__":
     # get the common footer content
     with open( "common_html/footer.html", "r" ) as f:
@@ -35,3 +55,6 @@ if __name__ == "__main__":
                 "../news/2020.html", "../news/2021.html", "../news/2022.html", "../news/2023.html", "../news/2024.html"]
     for html in all_html:
         replace_section( html, html, common_footer, "FOOTER" )
+
+    latest_pubs = get_latest_publication( "../publications.html", 3 )
+    replace_section( "index.html", "index.htmlout", latest_pubs, "PUBLICATION" )
